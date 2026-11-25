@@ -12,9 +12,11 @@ app.get("/", (req, res) => {
   });
 });
 // === AREA PENDAFTARAN RUTE MODUL TIM ===
-const anggotaRoutes = require('./routes/anggotaRoutes');
-app.use('/api/anggota', anggotaRoutes);
 // (Rute modul buku dan anggota akan ditambahkan di bawah baris ini)
+const bukuRoutes = require('./routes/bukuRoutes');
+const anggotaRoutes = require('./routes/anggotaRoutes');
+app.use('/api/buku', bukuRoutes);
+app.use('/api/anggota', anggotaRoutes);
 app.listen(PORT, () => {
   console.log(`Server berjalan pada http://localhost:${PORT}`);
 });
