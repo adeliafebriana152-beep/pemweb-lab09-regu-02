@@ -15,8 +15,10 @@ app.get("/", (req, res) => {
 // (Rute modul buku dan anggota akan ditambahkan di bawah baris ini)
 const bukuRoutes = require('./routes/bukuRoutes');
 const anggotaRoutes = require('./routes/anggotaRoutes');
+const peminjamanRoutes = require('./routes/peminjamanRoutes');
 app.use('/api/buku', bukuRoutes);
 app.use('/api/anggota', anggotaRoutes);
+app.use('/api/peminjaman', peminjamanRoutes);
 app.listen(PORT, () => {
   console.log(`Server berjalan pada http://localhost:${PORT}`);
 });
